@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>云后台管理系统</title>
+</head>
+
+<body>
+  <div id="app" style="width: 100%; height: 200px; background: #f00;">
+  </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+  // //测试前端js综合能力试题
+  // function Foo() {
+  //   getName = function() {
+  //     alert(1);
+  //   };
+  //   return this;
+  // }
+  // Foo.getName = function() {
+  //   alert(2);
+  // };
+  // Foo.prototype.getName = function() {
+  //   alert(3);
+  // };
+  // var getName = function() {
+  //   alert(4);
+  // };
+  //
+  // function getName() {
+  //   alert(5);
+  // }
+  // //请写出以下输出结果：
+  // Foo.getName();
+  // getName();
+  // Foo().getName();
+  // getName();
+  // new Foo.getName();
+  // new Foo().getName();
+  // new new Foo().getName();
+
+  var arr = [
+    ["aa", "bb", "cc"],
+    ["aa", "bb", "cc"],
+    ["b", "b", "v"],
+    {a: 'a', b: 'b'},
+    {a: 'a', b: 'b'},
+    {a: 'a', b: 'b', c: 'c'}
+  ];
+  var hash = {};
+  var result = [];
+  for (var i = 0, len = arr.length; i < len; i++) {
+    console.log(Object.prototype.toString.call(arr[i]) === '[Object Object]', arr[i].toString())
+    if (!hash[arr[i]]) {
+      result.push(arr[i]);
+      hash[arr[i]] = true;
+    }
+  }
+  console.log('arr', arr)
+  console.log('result', result)
+  console.log('hash', hash)
+  var item = {
+    name: 'hhh'
+  }
+  var item1 = {
+    name: 'gggg'
+  }
+  $(function() {
+    console.log($.extend({}, item,item1))
+  })
+</script>
+
+
+</html>
